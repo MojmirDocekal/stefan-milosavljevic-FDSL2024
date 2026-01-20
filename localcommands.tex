@@ -1,0 +1,59 @@
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author 
+\makeatother
+
+\newcommand{\togglepaper}[1][0]{ 
+%   \bibliography{../localbibliography}
+  \papernote{\scriptsize\normalfont
+    \ResolveAffiliations
+      [output affiliation=false, output authors font=\normalfont]
+      {\theauthor}.
+    \titleTemp. 
+    To appear in: 
+    Change Volume Editor \& in localcommands.tex 
+    Change volume title in localcommands.tex
+    Berlin: Language Science Press. [preliminary page numbering]
+  } 
+  \pagenumbering{roman}
+  \setcounter{chapter}{#1}
+  \addtocounter{chapter}{-1}
+}
+
+% add commmands of your own if needed
+\newcommand{\mC}[1]{\multicolumn{1}{c}{#1}} % multicolumn with a single column
+
+
+% keep this here (at the end of this document)
+\AtBeginDocument{\nogltOffset} %removes extra spacing before trans line in examples
+
+% Person
+\newcommand{\THREE}{\textsc{3}}
+
+% Cases
+\newcommand{\ACC}{\textsc{acc}}
+\newcommand{\DAT}{\textsc{dat}}
+\newcommand{\GEN}{\textsc{gen}}
+\newcommand{\ILL}{\textsc{ill}}
+\newcommand{\NOM}{\textsc{nom}}
+\newcommand{\PAR}{\textsc{par}}
+
+% Gender / number
+\newcommand{\FEM}{\textsc{fem}}
+\newcommand{\MASC}{\textsc{m}}
+\newcommand{\NEUT}{\textsc{n}}
+\newcommand{\PL}{\textsc{pl}}
+\newcommand{\SG}{\textsc{sg}}
+
+% Tense / aspect / mood
+\newcommand{\AOR}{\textsc{aor}}
+\newcommand{\IMPFT}{\textsc{impft}}
+\newcommand{\PRS}{\textsc{prs}}
+
+% Categories
+\newcommand{\AUX}{\textsc{aux}}
+\newcommand{\COMP}{\textsc{comp}}
+\newcommand{\INF}{\textsc{inf}}
+\newcommand{\PTCP}{\textsc{ptcp}}
+\newcommand{\REFL}{\textsc{refl}}
+

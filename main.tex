@@ -1,0 +1,666 @@
+\documentclass[output=paper,colorlinks,citecolor=brown
+% ,hidelinks
+% showindex
+]{langscibook}
+\author{Stefan Milosavljević\orcid{0000-0003-2305-2519}\affiliation{University of Graz}}
+%\author{Radek Šimík\orcid{0000-0002-4736-195X}\affiliation{Charles University} and
+%    Berit Gehrke\orcid{0000-0002-6315-9532}\affiliation{Humboldt-Universität zu Berlin} and
+%    Denisa Lenertová\orcid{}\affiliation{Humboldt-Universität zu Berlin} and
+%    Roland Meyer\orcid{0000-0003-2023-0527}\affiliation{Humboldt-Universität zu Berlin} and
+%    Luka Szucsich\orcid{}\affiliation{Humboldt-Universität zu Berlin} and
+%    Joanna Zaleska\orcid{0000-0002-0059-6938}\affiliation{Humboldt-Universität zu Berlin}
+
+% REPLACE THE ABOVE WITH YOU AND YOUR CO-AUTHORS, YOUR AFFILIATIONS, AND YOUR ORCID NUMBERS
+% rules for affiliation: If there's an official English version, use that (find out on the official website of the university); if not, use the original
+% orcid doesn't appear printed; it's metainformation used for later indexing
+
+\SetupAffiliations{mark style=none}
+% comment in (i.e. remove the % sign at the beginning of the line) the above line if you are a single author or all authors have the same affiliation
+
+\lehead{Milosavljević}
+% in case the running head with authors exceeds one line (which is the case in this example document), use one the above method to turn it into a single line; otherwise comment the line above out with % and ignore it
+
+\title[Finite verbs agree syntactically with NumPs in Serbian]{Finite verbs always agree syntactically with numeral phrases in Serbian: Evidence from definiteness/specificity}
+% REPLACE THE ABOVE WITH YOUR PAPER TITLE
+% provide a shorter version of your title in case it doesn't fit a single line in the running head
+% in this form: \title[short title]{full title}
+
+\abstract{The paper analyzes finite-verb agreement patterns with numeral phrases, i.e. ``five-and-up" subjects in Serbian. Two agreement options are available in such contexts: singular agreement (SgAgr), often labeled ``grammatical", where the verb bears a ``default" third-person singular specification; and plural, or ``semantic" agreement (PlAgr), where the verb bears third-person plural inflection. Previous formal approaches either consider PlAgr marginal or even extra-grammatical, or fail to account for the preference patterns among different agreement options depending on the semantic specification of the numeral phrase. Drawing on corpus findings from \citet{Milosavljevic2017} showing that PlAgr is even predominant with definite/specific numeral phrases, I argue that PlAgr is a genuine syntactic process resulting from the interaction between the internal and external syntax of numeral phrases. PlAgr is licensed when numeral phrases are DPs \textit{and} move to the subject position (SpecIP); in all other cases, SgAgr arises. 
+
+
+\keywords{subject-verb agreement, numeral phrases, five-and-ups, finite verbs, definiteness/specificity, Serbian}
+}
+
+%\abstract{Abstract goes here and should not have more than 150 words.
+
+%\keywords{here, come, your, 4 to 6 keywords or keyphrases}
+%}
+
+\input{localpackages.tex}
+\input{localcommands.tex}
+\bibliography{localbibliography}
+
+\IfFileExists{../localcommands.tex}{
+   \addbibresource{../localbibliography.bib}
+   \input{../localpackages}
+   \input{../localcommands}
+   \input{../localhyphenation}
+   \boolfalse{bookcompile}
+}{}
+
+\togglepaper[42]
+%the chapter number will be provided by volume editors; for now keep this way
+
+\begin{document}
+\maketitle
+
+%\input{template-osl.tex}
+% Just comment out the line above (place % at its beginning) and start writing your own document
+% WRITE DIRECTLY HERE, INTO main.tex, DO NOT START YOUR OWN tex FILE!
+
+% START WRITING HERE
+
+\section{Introduction}
+In Serbian, there are two possible strategies of subject-verb agreement with numeral phrases (NumPs) headed by numerals pet ‘five’ and higher: finite verbs take either the 3\textsuperscript{rd} singular or the 3\textsuperscript{rd} plural form (\ref{ex:intro-finite}), whereas participles take either the neuter singular or plural marking and gender of the noun (\ref{ex:intro-participles}). I refer to these two strategies as singular and plural agreement, that is, SgAgr and PLAgr, respectively.\footnote{Unless explicitly marked otherwise, all glossed examples come from Serbian.} 
+
+
+
+\ea \label{ex:intro} \label{ex:intro-finite}
+\gll (Tih) pet devojaka peva / pevaju.\\
+those five girls.\textsc{gen} sing.\textsc{3sg} {} sing.\textsc{3pl}\\
+\glt `Those five girls are singing.'
+\z
+
+\ea \label{ex:intro-participles}
+\gll (Tih) pet devojaka je pevalo / su pevale.\\
+those five girls.\textsc{gen} \textsc{aux.3sg} sing.\textsc{ptcp.n.sg} {} \textsc{aux.3pl} sing.\textsc{ptcp.f.pl}\\
+\glt `Those five girls have sung.'
+\z
+
+ \noindent Various factors have been proposed to influence the choice between SgAgr and PlAgr (cf. \citealt{Corbett2006, Corbett2010, Corbett2023, Milosavljevic2017, Milosavljevic2018MS, Milosavljevic2018nasledje, Milosavljevic2020}): animacy (animate subjects tend to trigger PlAgr), agentivity (agentive subjects favor PlAgr), word order (subject-verb order promotes PlAgr), individuation (individuated subjects are more likely to occur with PlAgr), the size of the numeral (smaller numerals are more frequently associated with PlAgr), verb form (finite verbs are more compatible with PlAgr than participles), and interpretation (distributive readings support PlAgr; cf. also \citealt{Bosnic2016}).\footnote{This should not be taken to imply that PlAgr is overall more frequent or acceptable than SgAgr in the presence of the relevant factors. Rather, it indicates that the presence of these factors increases the likelihood or acceptability of PlAgr relative to its occurrence in their absence.}
+Still, the received view is that SgAgr is default, or even the only grammatical option. That is, SgAgr is often regarded as a genuine grammatical process, whereas plural agreement is semantic, i.e., “extragrammatical" (cf. \citealt{Franks1994, Franks1995, Boskovic2008, Boskovic2024, saric2014numeral}, among others). This is usually supported by the fact that PlAgr is generally far less frequent (e.g., \citealt{Corbett2004} reports only 7\% of PlAgr from a corpus study).   
+
+However, viewing PlAgr as marginal or extragrammatical is unwarranted given that at least in some structural configurations, PlAgr emerges as a dominant pattern. For instance, \citet{Milosavljevic2017, Milosavljevic2018MS, Milosavljevic2018nasledje} observes that definite/specific NumPs, as in (\ref{ex:def-puzzle}), significantly favor PlAgr. With finite verbs, PlAgr is even a dominant pattern, as in Table \ref{tab:agreement-serbian} (to be elaborated in subsection \ref{sect:definiteness-effects-in-serbian}). This pattern indicates that PlAgr is not marginal or extragrammatical; it just needs specifically licensed controllers. The goal of the present paper is to account for the definiteness effect on agreement with NumPs in Serbian and the theoretical consequences arising from this pattern.
+
+
+\ea 
+\gll Tih  / svih / pomenutih pet devojaka peva / pevaju.\\
+those \textsc{} all \textsc{} mentioned five girls.\textsc{gen} sing.\textsc{3sg} \textsc{} sing.\textsc{3pl}\\
+\glt `Those / all / (the) mentioned five girls are singing.' \label{ex:def-puzzle}  
+\z
+
+
+ 
+\begin{table}[hbt!]
+    \caption{Agreement in Serbian: finite verbs (corpus study)}
+    \label{tab:agreement-serbian}
+    \begin{center}
+    \begin{tabular}{|c | c c |} 
+     \hline
+    \textsc{Agr Type} & \textsc{Def/Spec} & \textsc{-Def/Spec}  \\ [0.5ex] 
+     \hline\hline
+    \textsc{SgAgr}    & 66/186 (35\%)     & 79/96 (82\%)        \\ 
+     \hline
+    \textsc{PlAgr}    & 120/186 (65\%)    & 17/96 (18\%)        \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\noindent
+
+\noindent The rest of the paper is structured as follows. In section \ref{sect:previous-analyses}, I outline and discuss previous formal analyses of verbal agreement in Serbian (Serbo-Croatian / BCMS). Section \ref{sect:definiteness} first introduces the relevance of definiteness/specificity for agreement both with NumPs and other categories, in Slavic and cross-linguistically (subsection \ref{subsect:definiteness-cross-ling}), and then presents in more detail the effects of definiteness/specificity to agreement with NumPs in Serbian, mainly drawing from \citet{Milosavljevic2017, Milosavljevic2018MS, Milosavljevic2018nasledje} (subsection \ref{sect:definiteness-effects-in-serbian}). In section \ref{sect:proposal}, I present my own syntactic analysis that takes into account the observed definiteness/specificity effects. Section \ref{sect:residual-issues} brings to the picture some residual issues, such as the differences in agreement patterns between finite verbs and complex verbs involving participles. Section \ref{sect:conclusion} concludes the paper.
+
+While previous formal approaches have mainly focused on agreement with participial forms, in the present paper, I focus on finite verbs, where the definiteness/specificity effect is stronger. Participles include an additional gender feature, which arguably affects the agreement choices as an independent factor, as briefly discussed in subsection \ref{subsect:finite-vs-participles}. 
+
+To anticipate, I argue that PlAgr reflects a genuine syntactic process. It arises when numeral phrases are full DPs and undergo movement to the canonical subject position (SpecIP). In contrast, SgAgr emerges when such movement does not occur -- either because the subject is a bare NumP or a DP that remains in a lower position. In these cases, agreement is controlled by a null situational \textit{pro}, which anchors the predicate to the utterance context.
+
+\section{Previous formal analyses} \label{sect:previous-analyses}
+
+One influential early approach treats Serbian NumPs as nominals occupying the canonical subject position. Namely, \citet{Franks1995} analyzes NumPs in Serbian as nominals, i.e., structurally NPs that move to SpecIP, as typical subjects do. SgAgr results as the default option due to the featural deficiency of this numeral NP (whose features are set as neuter singular in the absence of any further specification). The feature percolation from the noun to the NP is inhibited by the oblique status of GEN(Q), i.e., the genitive of quantification as a form of the noun within the construction (see \citealt{Matushansky2018} for a similar stance regarding SgAgr in Polish). PlAgr represents a kind of “performance error", i.e., “semantic agreement" with the cardinality of the head N \citep[114]{Franks1995}. 
+
+A different line of analysis focuses on the morphosyntactic status of quantifiers themselves. According to \citet[147]{Zlatic1997}, GAgr with NumPs represents the primary agreement pattern in Serbian. In her system, the head of the NumP -- her quantified noun phrase (QNP) -- is a quantifier with the categorial status of an ‘uninflected’ noun, i.e., a nominal element lacking $\phi$-features. Crucially, this quantifier inherits both the $\phi$-features and the (inherent) case value of its NP complement. Since the complement NP surfaces in the genitive case under quantification, the quantifier -- and consequently the entire NumP -- receives inherent genitive. Given that in Serbian only nominative NP arguments trigger regular subject--verb agreement, the absence of a nominative DP in the clause predicts the emergence of the default neuter singular agreement pattern. This derives the central generalization of Zlatić’s account: default agreement arises whenever the clause lacks a nominative argument.
+
+Variation across speakers also plays an important role. \citeauthor{Zlatic1997} notes that, for some speakers, numerals may bear inherent nominative case. This optional nominative marking explains why certain speakers accept personal agreement with NumP subjects. When the numeral is nominative, it can trigger regular, i.e., non-default agreement. Even in such cases, however, the $\phi$-features originate not on the numeral itself -- which, like all uninflected quantifiers, lacks them -- but on the complement NP, whose features percolate to the NumP. Thus, dialects that permit nominative numerals also permit personal subject--verb agreement with NumPs \citep{Zlatic1997}.
+
+\citet{Boskovic2008} proposes the structure in (\ref{structure:boskovic-2008}) for Serbo-Croatian NumPs, where F is a functional head assigning the genitive case to the noun, whereas the numeral itself is analyzed as a QP merging in SpecFP (see also \citealt{Boskovic2024}). 
+
+\ea $[$\textsubscript{FP} QP $[$\textsubscript{F'} F NP$]$$]$ \label{structure:boskovic-2008} 
+\z 
+
+\noindent \citeauthor{Boskovic2008} does not provide a detailed syntactic analysis of agreement patterns with NumPs, but outlines three alternative solutions. According to the first, which assumes that the EPP is not correlated with agreement in Serbo-Croatian, the FP moves to SpecIP to satisfy the EPP. However, since it is not nominative (e.g., the numeral \textit{pet} `five' is caseless in Serbo-Croatian), agreement does not take place, resulting in SgAgr. PlAgr, in this case, is treated as semantic agreement.
+The second option dispenses with the need to posit the EPP. Here, the numeral \textit{pet} may be either caseless or nominative. In the former case, SgAgr arises. In the latter case, the numeral moves to SpecIP, yielding PlAgr.
+The third option requires the numeral \textit{pet} to be caseless, and prohibits the movement of numeral subjects to SpecIP for reasons of case, agreement, or EPP satisfaction -- resulting in SgAgr. (Movement to a higher position is still possible for independent reasons in Serbo-Croatian.) PlAgr is again analyzed as semantic agreement.
+
+In later works, \citet{Boskovic2013, Boskovic2024} treats SgAgr as the only grammatical agreement option, while PlAgr is considered semantic (and degraded and/or extragrammatical).
+
+
+
+
+%Note: Perhaps double case assignment (before and after the movement of the FP), but only one realization for morphological reasons. That's why nominal modifiers surface always in the genitive although they may be assigned the nominative case after the movement.
+
+\citet{Driemel2019} propose the internal structure of NumPs as in (\ref{structure:driemel}), in the spirit of \citet{Boskovic2008},where the functional head K assigns the genitive case to its complement, i.e., NP (similarly to F in \citealt{Boskovic2008}).
+
+\ea $[$\textsubscript{KP} QP $[$\textsubscript{K'} K NP$]$$]$ \label{structure:driemel}
+\z
+
+\noindent Unlike for Franks and Bošković, both SgAgr and PlAgr are syntactic in their approach, with the agreement pattern depending on the ordering of operations \(\uparrow \text{Agree} \uparrow, \downarrow \text{Agree} \downarrow\), \text{Merge} (and \text{Move}).\footnote{These operations are defined as follows in \citet[1221]{Murphy2018}: \begin{itemize}
+    \item[\textbf{a.}] \textsc{Merge} -- (External Merge) checks (c-)selectional features (●F●)
+    \item[\textbf{b.}] \textsc{Move} -- (Internal Merge) applies freely, but only if it has a (positive) effect on outcome
+    \item[\textbf{c.}] $\downarrow$\textsc{Agree}$\downarrow$ -- (‘Downward’ Head-Comp Agree) copies a feature value from a goal c-commanded by the probe
+    \item[\textbf{d.}] $\uparrow$\textsc{Agree}$\uparrow$ -- (‘Upward’ Spec-Head Agree) copies a feature value from a goal m-commanded by the probe
+\end{itemize}} 
+
+
+SgAgr is a Default Agree: When Merge applies first, both $\uparrow$\textsc{Agree}$\uparrow$ and $\downarrow$\textsc{Agree}$\downarrow$ succeed, leading to a clash, which is repaired by Default agreement. PlAgr is an agreement with the noun features, due to (\ref{ex:PlAgr-Stojkovic}). Specifically, $\uparrow$\textsc{Agree}$\uparrow$ fails, Merge applies, and then K successfully $\downarrow$\textsc{Agree}$\downarrow$ with the features of N. The verb agrees with the KP specified in this way (acquiring plural and the gender of the noun).
+
+\ea $\uparrow$\textsc{Agree}$\uparrow$ \gg \text{Merge} \gg $\downarrow$\textsc{Agree}$\downarrow$ \label{ex:PlAgr-Stojkovic}
+\z
+
+\noindent \citet{Culinovic2017} also considers both SgAgr and Plgr as syntactic configurations, as illustrated in (\ref{ex:culinovic}).\footnote{According to \citet{Culinovic2017}, SgAgr gives rise only to collective (five girls earned 20.000 dollars as a group), and PlAgr to both collective and distributive interpretations (the latter: each girl in the set of five girls earned 20.000 dollars).\label{fn:Culinovic}} 
+
+\ea \label{ex:culinovic}
+\gll Pet devojaka je zaradilo / su zaradile 20.000 dolara.\\
+      five girls.\textsc{gen} \textsc{aux}.3\textsc{sg} earn.\textsc{ptcp.sg.n} {} \textsc{aux}.3\textsc{pl} earn.\textsc{ptcp.pl.f} 20,000 dollars\\
+\glt `Five girls earned 20,000 dollars.'
+\z
+
+
+\noindent The internal structure of NumPs giving rise to SgAgr is as in (\ref{structure:culinovic-sg}), where N-set in the sense of \citet{kayne2016some}, which is singular neuter, assigns the GenQ. NumPs that trigger PlAgr have the structure as in (\ref{structure:culinovic-pl}), where $\phi$ assigns plural and feminine gender in the sense of \citet{sauerland2004}.
+
+
+\ea $[$\textsubscript{N-setP} NumP $[$\textsubscript{N-set'} N-set $[$\textsubscript{DP} ...$]$$]$$]$ \label{structure:culinovic-sg}
+\z
+
+
+
+\ea $[$\textsubscript{$\phi$P} $[$\textsubscript{$\phi$'} $\phi$:PL,F $[$\textsubscript{N-setP} NumP $[$\textsubscript{N-set'} N-set $[$\textsubscript{DP} ...$]$$]$$]$$]$$]$ \label{structure:culinovic-pl}
+\z
+
+\noindent The above options are summarized in Table \ref{tab:formal-analyses-X}.
+
+\begin{table}[hbt!] 
+    \centering
+    \footnotesize % Smaller font size
+    \renewcommand{\arraystretch}{1.2} % Adjust row height for readability
+    \caption{Formal analyses: Summary}
+    \begin{tabular}{|l|p{4cm}|p{4cm}|} % Adjust column width to make the table smaller
+        \hline
+        \textsc{Work} & \textsc{SgAgr} & \textsc{PlAgr} \\ [0.5ex]
+        \hline\hline
+        \citet{Franks1995} & Syntactic agreement with feature-defective NP & Semantic agreement (with N) \\ 
+        \hline
+        \citet{Zlatic1997} & Default agreement due to non-nominative (genitive) NumP, with features inhereted from the complement noun & SAgr possible when numeral is inherently nominative (for some speakers/dialects) \\ 
+        \hline
+        \citet{Boskovic2008} & No nominative $\rightarrow$ no agreement (subject in SpecIP) & Semantic agreement \\ 
+        \hline
+        \citet{Boskovic2008} & No nominative $\rightarrow$ no agreement (subject low) & Semantic agreement \\ 
+        \hline
+        \citet{Boskovic2008} & No nominative $\rightarrow$ no agreement (subject low) & Syntactic agreement with the nominative numeral in SpecIP \\ 
+        \hline
+        \citet{Driemel2019} & Syntactic agreement – default option & Syntactic agreement with KP inheriting features from N \\ 
+        \hline
+        \citet{Culinovic2017} & Syntactic agreement with N\textsubscript{set} head & (Syntactic) agreement with $\phi$P on top of N\textsubscript{set}P \\ 
+        \hline
+    \end{tabular}
+\end{table} \label{tab:formal-analyses-X}
+
+
+
+\noindent However, it is unclear how the definiteness/specificity effect (or potentially other factors, such as animacy) are to be derived/accounted for in any of these analyses. Additionally, some approaches, such as \citet{Zlatic1997}, attribute the availability of SAgr to idiolectal or dialectal variation, but this does not capture the fact that variation is also intra-speaker, as many speakers allow both options \citep{Milosavljevic2018nasledje}.
+
+My own analysis, presented in section \ref{sect:proposal}, shares with \citet{Driemel2019} and \citet{Culinovic2017} the view that PlAgr is a genuine syntactic process. With \citet{Culinovic2017}, it also shares the view that the internal structure of NumPs giving rise to SgAgr and PlAgr is different. 
+Crucially, my proposal is designed to capture the observed definiteness effects (and their interaction with the nominative assignment proposed by \citealt{Boskovic2008}),\footnote{While \citet{Zlatic1997} also connects SAgr to the presence of nominative case, my approach aligns with \citet{Boskovic2008} in tying nominative case assignment to the subject’s position in SpecIP.} which are presented in more detail in the next section.
+
+\section{Definiteness and agreement with NumPs} \label{sect:definiteness}
+
+In this section, we begin with a broader, cross-linguistic overview of the correlation between definiteness and agreement (subsection \ref{subsect:definiteness-cross-ling}), before narrowing the focus to the empirical situation in Serbian (subsection \ref{sect:definiteness-effects-in-serbian}).
+
+\subsection{Cross-linguistic picture}\label{subsect:definiteness-cross-ling}
+Cross-linguistically and typologically, definiteness is rarely found (or recognized) as a relevant factor in affecting the choice of agreement patterns in the cases of competition, at least when compared to factors such as animacy, agentivity or word order (\citealt{Corbett2006}, see \citealt{Milosavljevic2017, Milosavljevic2018MS} for an overview). 
+
+Definiteness has been identified as a key feature in agreement with NumPs in Russian, as definite/specific NumPs obligatorily give rise to PlAgr \citep{Pereltsvaig2006, Matushansky2014, Matushansky2015a, Matushansky2015}. \citet{Pereltsvaig2006} posits a structural difference between NumPs giving rise to different patterns: definite/specific NumPs that obligatorily give rise to PlAgr are DPs, with D specified for interpretable $\phi$-features (number, gender and person), which are valued,\footnote{The noun itself has also been assumed to be specified for $\phi$-features, but they are unvalued. It is only on D that they get valued \citep[484]{Pereltsvaig2006}. Additionally, both DPs and Small Nominals are specified for grammatical features of gender and number. According to \citeauthor{Pereltsvaig2006}, they are independently necessary to explain the discrepancies between agreement within a nominal (such as attributive agreement), analyzed as the matching of grammatical gender and number features, and agreement outside a nominal (such as predicate agreement), analyzed as the matching of fully valued uninterpretable features. Although these two types of agreement typically align, there are instances where they differ.} whereas SgAgr is due to the agreement with “Small Nominals", without the D-layer, and consequently without pronominal, interpretable $\phi$-features. The pattern is illustrated in (\ref{ex:definiteness-Russian}). The question remains, however, as to why with indefinite/unspecific NumPs (i.e., non-DPs), PlAgr is also possible, cf. (\ref{ex:definiteness-Russian-b}).
+
+\ea \label{ex:definiteness-Russian}
+\begin{xlist}
+\ex 
+\gll Eti pjat' devušek rabotali / *rabotalo tam.\\
+     these five girls.\textsc{gen} worked.\textsc{pl} {} *worked.\textsc{n.sg} there\\
+\glt `These five girls worked there.'
+
+\ex \label{ex:definiteness-Russian-b}
+\gll Pjat' etih devušek rabotali / rabotalo tam.\\
+     five these.\textsc{gen} girls.\textsc{gen} worked.\textsc{pl} {} worked.\textsc{n.sg} there\\
+\glt `Five of these girls worked there.'
+\end{xlist} \z \hfill{(Russian; \citealt[]{Pereltsvaig2006})}
+
+
+
+\noindent The categorial distinction between agreeing and non-agreeing subject NumPs goes back to \citet{Pesetsky1982} and \citet{Franks1995}, who argue that agreeing NumPs are nominal in nature, whereas non-agreeing ones are quantification phrases (QPs). However, these accounts do not address definiteness or specificity. \citet{Matushansky2014, Matushansky2015a, Matushansky2015} argue that SgAgr is a consequence of the lack of the individuation feature, which is responsible for the set of properties such as specificity, i.e., D-linking, existence presupposition, referentiality, etc. They also assume a different semantic type for agreeing and non-agreeing subject NumPs, i.e., individuals vs. degrees, as will be discussed below. \citet{Boskovic2008, Boskovic2024}, on the other hand, argues that what is crucial for PlAgr is the ``nominativity" of the subject: PlAgr reflects agreement with nominative subjects, whereas SgAgr emerges in the absence of the nominative. He does not discuss the definiteness/specificity effects. 
+
+Similar definiteness effects have been observed for Kazym Khanty, where definite NumPs obligatorily license PlAgr \citep{Pisarenko2024}. \citet{Pisarenko2024} follows \citet{Pereltsvaig2006}'s analysis to account for these facts.
+
+The effects of definiteness and specificity on agreement patterns with NumPs have been observed for Serbian in \citet{Milosavljevic2017, Milosavljevic2018MS, Milosavljevic2018nasledje} and Finnish in \citet{Kaiser2022salt, Kaiser2022short}. The emerging patterns here are similar to each other and different from those attested in Russian and Kazym Khanty: in both Serbian and Finnish, definiteness/specificity enhances PlAgr, but does not make it obligatory. I will come to the empirical picture in Serbian in subsection \ref{sect:definiteness-effects-in-serbian}, so let me now focus on the Finnish picture. According to \citet{Kaiser2022salt, Kaiser2022short}, in Finnish, ``semantic" definiteness, i.e., maximality, familiarity, distributivity, enables PlAgr with NumPs, though the numeral itself is morpho-syntactically marked for singular (see also \citealt{Norris2021}, who additionally discusses Estonian). For instance, PlAgr in (\ref{ex:finnish-1}) is compatible only with a maximal interpretation (there are four parties in the context). SgAgr in (\ref{ex:finnish-2}) is ambiguous: it can also be interpreted in an existential, non-maximal way: there exist four parties who reached an agreement. Importantly, SgAgr -- at least for some speakers -- is compatible with both maximal and non-maximal readings.
+
+
+\ea \label{ex:Fin-agreement}
+\begin{xlist}
+\ex \label{ex:finnish-1}
+\gll Neljä osapuol-ta pää-sivät sopimuks-een.\\
+     four.\textsc{sg} party-\textsc{sg.par} reach-\textsc{past.3pl} agreement-\textsc{ill}\\
+\glt `The four parties reached an agreement.' 
+
+\ex \label{ex:finnish-2}
+\gll Neljä osapuol-ta pää-si sopimuks-een.\\
+     four.\textsc{sg} party-\textsc{sg.par} reach-\textsc{past.3sg} agreement-\textsc{ill}\\
+\glt `Four parties reached an agreement.' / `There exist four parties that reached an agreement.' 
+\end{xlist}
+\z \hfill{(Finnish; \citealt[427]{Kaiser2022salt})}
+
+
+\noindent In sum, on \citet{Kaiser2022salt}'s proposal, PlAgr is due to the definiteness/maximality effect, whereas SgAgr is a consequence of the existential force and is actually the absence of agreement. Existential subjects are presumably located low in the structure, and the existential construal here roughly mirrors the structure of thetic sentences. However, the question remains how to account for SgAgr with definite subject NumPs.
+
+Definiteness/specificity effects have also been observed for some other subject constructions. For instance, PlAgr with “pluringulars" (singular collective nouns that can give rise to PlAgr, \citealt{DenDikken2001}) are often judged as ungrammatical in indefinite/non-specific contexts \citep[106]{Danon2014}, as obvious from the contrast in (\ref{ex:pluringulars}).
+
+\ea \label{ex:pluringulars}
+\begin{xlist}
+  \ex The/my family \textbf{are} making important decisions.
+
+  \ex \textsuperscript{??/*} One family \textbf{are} making important decisions.
+\end{xlist}
+\z
+
+\noindent To account for such a pattern, \citet{Sauerland2004snippets} argues that PlAgr with singular is due to a null definite. \citet{sauerland2004} proposes, for pluringulars and a couple of other constructions, that $\phi$P projects on top of DP, and bears interpretable, ``pronominal" features, which give rise to PlAgr in cases like this. 
+
+Further, \citet{mitic-arsenijevic-2019} argue for D mediating verbal agreement with coordinated subjects, whereas \citet{Arsenijevic2016pluringulars}, building on \citet{Postal1994, deVries2002, deVries2006}, posit a definite null pronoun mediating relative pronouns' agreement in non-restrictive relative clauses (\citealt{Arsenijevic2016pluringulars}). A final example of the relation between definiteness and agreement to be mentioned here concerns clitic doubling (to the extent it is considered a kind of agreement): as is well known, definiteness effects are cross-linguistically associated with clitic doubling, and many authors postulate that D is necessary in licensing it (e.g. \citealt{Boskovic2008a, Kallulli2016}, a.o.). 
+
+%In the next subsection, I turn to the empirical picture of the definiteness effects on agreement with NumPs in Serbian.
+
+
+\subsection{Definiteness effects in Serbian} \label{sect:definiteness-effects-in-serbian}
+The present section outlines the main empirical findings on the role of definiteness and specificity in licensing plural agreement (PlAgr). It focuses on the corpus-based research reported in \citet{Milosavljevic2017, Milosavljevic2018MS}. Specifically, this paper zooms in on a subset of the corpus data from \citet{Milosavljevic2017} that examines agreement with finite verbs. The data set includes 282 examples from the Corpus of Contemporary Serbian (\href{http://korpus.matf.bg.ac.rs/}{http://korpus.matf.bg.ac.rs/}) \citep{VitasUtvic2013}. Constructions with numerals from \textit{pet} ‘five’ to \textit{deset} ‘ten’ were extracted. The search was restricted to examples with neutral subject–verb order and at most two corpus words intervening between the subject and the verb. A subject was annotated as Def/Spec if definiteness or specificity was overtly marked -- by a demonstrative, possessive, the universal quantifier \textit{sav} `all', deictic and relational adjectives, superlatives -- or if its referent was clearly identifiable from context. Otherwise, it was marked as –Def/Spec. NumPs were marked as specific if their referents were epistemically accessible to the speaker and/or the subject, following \citet{vonHeusinger2002}.\footnote{The annotation has been performed by the author of the study, and then checked by one additional native speaker.} While the original study also annotated the data for animacy, agentivity, noun gender, and other properties, I abstract away from these here, as Def/Spec consistently showed significant effects irrespective of the values of other factors \citep{Milosavljevic2017}; see also \citet{Milosavljevic2018nasledje} for a similar conclusion based on the acceptability judgments test.
+
+    
+All types of definite/specific NumPs give the agreement patterns in Table \ref{tab:corpus-data-summary}; see \citet{Milosavljevic2017} for a more fine-grained analysis.\footnote{\citet{Milosavljevic2017} classifies examples based on whether definiteness or epistemic specificity is involved, as well as the particular means by which definiteness is licensed. Since no significant differences were observed across these subcategories, I group them together here for the sake of simplicity, but refer the interested reader to the cited study for further details.}
+
+
+\begin{table}[hbt!]
+    \centering
+    \caption{Agreement patterns of finite verbs in Serbo-Croatian (corpus study; after \citealt{Milosavljevic2017})}
+    \label{tab:corpus-data-summary}
+    \begin{tabular}{|c | c c |} 
+        \hline
+        \textsc{Agr Type} & \textsc{Def/Spec} & \textsc{-Def/Spec}  \\ [0.5ex] 
+        \hline\hline
+        \textsc{SgAgr}    & 66/186 (35\%)     & 79/96 (82\%)        \\ 
+        \hline
+        \textsc{PlAgr}    & 120/186 (65\%)    & 17/96 (18\%)        \\ 
+        \hline
+    \end{tabular}
+\end{table}
+
+\noindent As can be observed from the table, PlAgr predominates in definite/specific contexts, accounting for roughly two-thirds of the examples. By contrast, with subject NumPs annotated as -Def/Spec, SgAgr is strongly preferred, covering more than 80\% of instances. When only examples with definite/specific but inanimate non-agentive subjects are considered, PlAgr remains significantly more frequent, appearing in 65\% (20/31) of cases.\footnote{In a recent quantitative study focusing only on definite inanimate phrases, \citet{milosavljevic-stojkovic-2025genderedness}, based on the dataset \citet{milosavljevic-stojkovic2025-dataset}, show that PlAgr is significantly more frequent than SgAgr with finite verbs, accounting for 294/438 examples (67\%), thereby reinforcing quantitative findings reported in \citet{Milosavljevic2017}.}
+
+In examples with tenses encoding the “witnessed past" (aorist, imperfect(um))\footnote{See e.g., \citet{samilov1957} on the evidential nature of aorist and imperfect(um).}, plural agreement (PlAgr) is even more dominant, accounting for 93.33\% (14/15) of cases. This further amplifies the effects of definite/specific subjects, as evidentiality typically implies the specificity of the referents.
+
+
+
+
+To give a taste of actual examples, I illustrate several patterns from the data. 
+Example (\ref{ex:definite-animate}) illustrates a definite NumP where the exhaustive interpretation is marked by \textit{sav} `all' (and the relevant referents are introduced in the previous discourse). In (\ref{ex:definite-inanimate}), the ordinal \textit{prvih} `first' explicitly marks the definiteness (and the relevant set is a subset of the previously introduced quantified set of twenty chapters). In the former example, the subject is animate, while in the latter, it is inanimate. 
+
+\ea \label{ex:definite-animate}
+\gll Osuđenici iz Niša su u tuči zadobili teže povrede. [...] \textit{Svih} \textit{šest} \textit{zatvorenika} nalaze se u Odeljenju pojačanog nadzora.\\
+      convicts from Niš \textsc{aux}.3\textsc{pl} in fight sustained serious injuries {} all six prisoners.\textsc{gen} locate.\textsc{3pl} \textsc{refl} in Department increased surveillance\\
+\glt `The convicts from Niš sustained serious injuries in a fight. [...] All six prisoners are in the Enhanced Surveillance Department.'
+\z
+
+
+\ea \label{ex:definite-inanimate}
+\gll Petrovljev roman sklopljen je mozaički od dvadeset poglavlja; \textit{prvih} \textit{deset} \textit{poglavlja} stoje u simetričnoj opoziciji prema drugoj desetici poglavlja.\\
+      Petrović's novel assembled \textsc{aux}.3\textsc{sg} mosaically from twenty chapters first ten chapters.\textsc{gen} stand.\textsc{3pl} in symmetrical opposition to second ten chapters\\
+\glt `Petrović's novel is mosaically assembled from twenty chapters; the first ten chapters stand in symmetrical opposition to the second set of ten chapters.'
+\z
+
+\noindent In (\ref{ex:definite-bare}), the definiteness/specificity is not explicitly marked, but is deducible from the context, as the subject \textit{šest tačaka} has been introduced in the immediately preceding context.
+
+
+\ea \label{ex:definite-bare}
+\gll Beograd insistira na tome da plan generalnog sekretara UN Ban Ki-Muna u šest tačaka u potpunosti bude sproveden u delo. \textit{Šest} \textit{tačaka} regulišu položaj Srba u sredinama na Kosovu gde su većina.\\
+      Belgrade insists on that \textsc{comp} plan general secretary UN Ban Ki-Moon in six points in fully \textsc{aux}.3\textsc{sg} implemented in action six points.\textsc{gen} regulate.\textsc{3pl} position Serbs in areas on Kosovo where are majority\\
+\glt `Belgrade insists that the plan of the UN Secretary-General Ban Ki-Moon in six points be fully implemented. The six points regulate the position of Serbs in areas of Kosovo where they are the majority.'
+\z
+
+
+\noindent Examples in which the subject was annotated as -Def/Spec are illustrated in (\ref{ex:unspecific-1}) and (\ref{ex:unspecific-2}). The former is a clear instance of an unspecific, non-referential subject (roughly paraphrasable as `any five buyers'). In the latter, the subject is not definite, as this effect is neither explicitly marked nor are the referents previously introduced. The broader context does not reveal whether the writer has specific referents in mind. As per the methodology described above, such an example is also marked as -Def/Spec.
+
+
+\ea \label{ex:unspecific-1}
+\gll Prodaja je trenutno stala, ali cene ne padaju, tvrdi Tomislav Sekulović, predsednik Udruženja posrednika u prometu nekretnina. Sve dok se \textit{pet} \textit{kupaca} bori za jedan stan, kaže on, ne postoji šansa da kvadrati u glavnom gradu pojeftine.\\
+      sales \textsc{aux}.3\textsc{sg} currently stopped but prices not fall.3\textsc{sg} claims Tomislav Sekulović president Association brokers in trade real\_estate all while \textsc{refl} five buyers.\textsc{gen} struggle.\textsc{3sg} for one apartment says he not exist chance that squares in main city cheapen\\
+\glt `Sales have currently stopped, but prices are not falling, claims Tomislav Sekulović, president of the Association of Real Estate Brokers. As long as five buyers are competing for one apartment, he says, there is no chance that price per square meter in the capital will decrease.'
+\z
+
+
+\ea \label{ex:unspecific-2}
+\gll \textit{Pet} \textit{Hrvata} putuje u svemir.\\ 
+      five Croats.\textsc{gen} travel.\textsc{3sg} to space\\
+\glt `Five Croats are traveling to space.'
+\z
+
+
+\noindent Finally, examples (\ref{ex:aorist}) and (\ref{ex:imperfectum}) illustrate evidential tenses, aorist and imperfect(um), respectively. These two examples also show that, when definite/specific, NumPs easily give rise to PlAgr even when the subjects are abstract inanimate entities such as days and minutes, respectively.
+
+
+\ea \label{ex:aorist}
+\gll Trebalo je snabdeti nameštajem tu kuću. \textit{Osam} \textit{beskrajnih} \textit{dana} prođoše sa tapetarima i radnicima.\\
+      needed \textsc{aux}.3\textsc{sg} supply furniture that house eight endless days.\textsc{gen} passed.\textsc{aor.3pl} with upholsterers and workers\\
+\glt `It was necessary to furnish that house. Eight endless days passed with upholsterers and workers.'
+\z
+
+
+\ea \label{ex:imperfectum}
+\gll Ostalo im je da žive još jedno pet minuta, ne više. Onaj [čovek] mi je pričao da mu se \textit{tih} \textit{pet} \textit{minuta} činjahu kao beskonačan rok, kao neko ogromno bogatstvo: činilo mu se da će za tih pet minuta proživeti toliko života da zasad još nema ni smisla da misli o poslednjem trenutku. \\
+remained them \textsc{aux}.3\textsc{pl} to live yet one five minutes, not more. that [man] me \textsc{aux}.3\textsc{sg} told that him \textsc{aux}.3\textsc{sg} those five minutes.\textsc{gen} seemed.\textsc{impft.3pl} like infinite period like some huge wealth: seemed him \textsc{refl} \textsc{comp} will for those five minutes live so life \textsc{comp} so\_far not\_yet have.not even sense \textsc{comp} think about last moment.\\
+\glt `They still had another five minutes to live, no more. That man told me that those five minutes seemed to him like an infinite period, like some enormous wealth: it seemed to him that in those five minutes he would live so much life that it doesn’t even make sense to think about the last moment yet.'
+\z
+
+\noindent The effect of definiteness/specificity on enhancing PlAgr has been confirmed in the acceptability study reported in \citet{Milosavljevic2018nasledje}.
+
+
+
+\section{Proposal} \label{sect:proposal}
+
+I argue that PlAgr in Serbian with finite verbs is a genuine syntactic process, just as SgAgr is, in accordance with a syntactic analysis of ‘semantic’ agreement more generally (cf. \citealt{Pereltsvaig2006}, \citealt{Danon2013}, \citealt{Wurmbrand2017}, among many others).
+
+The difference between SgAgr and PlAgr in Serbian is best captured by combining internal \textit{and} external syntax of subject NumPs in the following way. Internally, only DPs can license PlAgr, whereas ``Small Nominals" in the sense of \citet{Pereltsvaig2006}, i.e., NumPs without the D layer, cannot. However, this is not enough: DPs can license PlAgr only if they move to the SpecIP position. Otherwise, SgAgr arises due to the subject position being filled by a null situation pronoun, which is by default third-person singular (neuter).
+
+Why is D necessary to license PlAgr? Following \citet{Pereltsvaig2006}, I assume that in the case of definite/specific subjects, D bears interpretable, valued $\phi$-features -- specifically, [3pl] features in the case at hand.\footnote{This goes against the widespread assumption that third person corresponds to the absence of person features (cf. \citealt{benveniste1966, DenDikken2019}). But see \citet{Ackema2018, Grishin2023, Alexiadou2024} for the alternative view.} This renders D pronominal in nature, in the sense that interpretable $\phi$-features are inherently pronominal, as argued by \citet{sauerland2004}.\footnote{Some works explicitly propose a null plural (definite) \textit{pro} as a realization of D \citep{DenDikken2001, mitic-arsenijevic-2019}. For proposals involving a null pronoun in the extended nominal projection responsible for “semantic” agreement, see also: \citet{Postal1966, Citko2004, Taylor2009, Costa2013, TorregoLaka2015, Polinsky2016, Arsenijevic2016pluringulars, Camacho2021}.} In this view, D subsumes the $\phi$-head positioned on top of DP, as proposed by \citet{sauerland2004}. Placing ``pronominal” features directly on D aligns more closely with approaches that argue definiteness and person are in fact part of the same category \citep{Lyions1999, Stankovic2016, Milosavljevic2017, Milosavljevic2018MS}.
+
+
+In practice, then, the structure of the definite DP from example (\ref{ex-definite-DP-plural}) is as in (\ref{structure:DP-plural}). I labeled the phrase hosting the numeral and the noun in the genitive case schematically as KP, where K is the head assigning the genitive case to the noun, and the numeral itself is its specifier, as in \citet{Driemel2019}, but this technically could have been labeled Q, or N\textsubscript{SET}, etc. (see section \ref{sect:previous-analyses}). 
+
+ \ea \label{ex-definite-DP-plural}
+ \gll Tih pet devojaka pevaju. \\
+those five girls.\textsc{gen} \textsc{sing.3pl} \\
+\glt `(Those) five girls are singing.'
+\z
+
+\ea \label{structure:DP-plural}
+$[$\textsubscript{DP} tih [\textsubscript{D'} D\textsubscript{[3pl]} [\textsubscript{KP} Num:\textit{pet} [\textsubscript{K'} K NP\textsubscript{GEN}:\textit{devojaka}]]]$]$
+\z 
+
+\noindent On the approach where a pronominal D projects above NumP, we might expect that this D-\textit{pro} can bear a different case from the embedded NP. Empirical evidence reported in \citet{Milosavljevic2013} supports this prediction. While NumPs typically cannot be used with verbs that assign dative case\footnote{This holds for verbs that require the dative without prepositions, such as \textit{diviti se} `admire'. It is possible to use numeral phrases with all prepositions, including those that typically require the dative case (e.g., \textit{ići ka kući} [go.\textsc{inf}-towards-house.\textsc{dat}] `go towards the house'), presumably because the intended meaning is encoded in the preposition itself.} -- presumably because the numeral is case-inert -- the situation changes when a demonstrative or a possessive appears in a prenominal position. Such constructions become acceptable, and as shown in \citet{Milosavljevic2013}, the most acceptable and frequently attested ones are those where the demonstrative or possessive bears dative case, while the noun following the numeral appears in the genitive. 
+This is illustrated by the contrast between (\ref{ex:pet-dat-ungramm}) and (\ref{ex:pet-dat-gramm}). While the former is entirely unacceptable, the latter is, for some speakers at least, significantly more acceptable. This pattern is precisely what we expect if the noun receives genitive case from a case-assigning null K, while the dative case on the pre-numeral possessive is assigned independently.
+
+
+\ea [*]{\gll Dala je knjigu pet drugarica. \\  
+give.\textsc{ptcp.f.sg} \textsc{aux.3sg} book.\textsc{acc.sg} five friends.\textsc{gen} \\  
+\glt ‘Intended: She gave the book to five friends.’\label{ex:pet-dat-ungramm}}  
+\z  
+
+
+\ea [?] {\gll Dala je knjigu svojim pet drugarica. \\  
+give.\textsc{ptcp.f.sg} \textsc{aux.3sg} book.\textsc{acc.sg} self.\textsc{dat.pl} five friends.\textsc{gen} \\  
+\glt ‘She gave the book to her five friends.’ \label{ex:pet-dat-gramm}} 
+\z  
+
+\noindent The fact that in the subject position as in (\ref{ex-definite-DP-plural}), the demonstrative remains in the genitive even when moving to a pre-numeral position, might be an illusion, i.e., the demonstrative can still bear nominative, despite surface appearance, as discussed shortly.  
+
+To license PlAgr, the DP must move to SpecIP, as illustrated in (\ref{tree:DP-plural}).\footnote{I assume that only the inflectional ending sits in I. The verbal stem itself remains in \textit{vP}; it is shown in gray alongside the inflectional ending for the sake of presentation. For concreteness, I further assume that the inflection and the verbal stem compose morphologically via the T-to-V Lowering operation in the sense of \citet{embick2001movement}.} The reason is, as I elaborate shortly below, the anchoring role of the referential subject, which must be performed from the subject position (possibly also by moving to an even higher position, such as FinP). I also assume that the DP receives the nominative case in SpecIP \citep{Boskovic2008}. According to \citet{Boskovic2008}, the numeral subject can be assigned case twice: in the base-generated position (genitive), and after moving to SpecIP (nominative). The ``double" case morphologically surfaces as genitive in Serbo-Croatian (though in Russian, it is realized as nominative for high, SpecIP subjects). It follows that low referential subjects (triggering SgAgr) are not assigned nominative, but only genitive. Consequently, only referential subjects that move to SpecIP can be assigned nominative and can thus trigger PlAgr. This is also in accordance with the view that the person feature, introduced by D in the approach advocated here, is crucial for the nominative case licensing (e.g. \citealt{Bianchi2003}). 
+
+
+\ea \label{tree:DP-plural}
+    \begin{forest}
+    for tree={
+        s sep=1em, % adjust node separation if needed
+        anchor=center,
+        l+=1em
+    }
+    [IP
+        [DP\textsubscript{[3pl]}
+            ,name=specIP] % Naming Spec,IP for arrow reference
+        [I'
+            [\textcolor{gray}{peva}-ju{\textsubscript{[3pl]}}
+                ,name=headIP] % Naming head,IP for arrow reference
+            [vP
+                [t\textsubscript{DP} [(\textit{tih pet devojaka})]]
+                [v' [\textit{peva} ]]
+            ]
+        ]
+    ]
+    % Draw arrow from Spec,IP to head,IP
+    \draw[<-, thick, dashed] (specIP) to[bend right=40] (headIP);
+\end{forest}
+\z  
+
+
+\noindent Additional motivation for assuming that numeral DPs must move to SpecIP to license PlAgr comes exactly from the fact that SgAgr is still possible in the presence of a definite/DP (\ref{ex-definite-sg}), unlike in e.g., Russian. I propose that in this case the subject position is filled by a null situational pronoun that serves to anchor the sentence into a discourse, cf. (\ref{tree:def-sgagr}). According to \citet{Hinterholzl2019, Hinterholzl2024es, Hinterholzl2024subjects}, there are two possible ways to anchor the sentence in the context: either via an individual or via a situation. In this agreement strategy, the sentence is anchored via situation (pro). That is, the situation pronoun is the aboutness topic of the sentence (cf. also \citealt{Erteschik-Shir1997, Basilico2003}). The situation pronoun bears (what looks like) third-person singular by default, i.e., the third-person here is the absence of person.\footnote{A reviewer asks whether there is independent evidence for a null situation pronoun and whether it is related to the “true” situation pronoun, such as the demonstrative \textit{to} in \textit{To turisti galame} [that tourists make\_noise] ‘What you hear is tourists making noise’. Situation pronouns are typically null \citep{kratzer2004covert, kratzer2021situations, schwarz2009definites}. Recent approaches have proposed that traditional expletive pronouns are in fact situation pronouns \citep{klein2008topic, Hinterholzl2019, Hinterholzl2024es}, which means that in non-pro-drop languages they may be overt. In pro-drop languages such as Serbian, the equivalents of these expletive-like situation pronouns are null. Such pronouns have been used in \citet{arsenijevic2021situation, milosavljevic2024standard, MilosavljevicMilosavljevicAccepted} to model the structure of complex sentences in Serbo-Croatian. Furthermore, \citet{milosavljevic2022intensifying} and \citet{MilosavljevicMilosavljevicAccepted} analyze the situation demonstrative \textit{to} in Serbian as an emphatic counterpart of an otherwise null situation pronoun.} 
+Since there is a general preference for subject DPs to act as topics, this is a marked state of affairs, which is why it is less frequent -- recall that SgAgr with definite NumPs is a less frequent option than PlAgr. 
+
+
+\ea \label{ex-definite-sg}
+ \gll Tih pet devojaka peva. \\
+those five girls.\textsc{gen} \textsc{sing.3sg} \\
+\glt `Those five girls are singing.'
+\z
+
+\ea \label{tree:def-sgagr}
+    \begin{forest}
+    for tree={
+        s sep=1em, % adjust node separation if needed
+        anchor=center,
+        l+=1em
+    }
+    [IP
+        [pro\textsubscript{[3sg]}
+            ,name=specIP] % Naming Spec,IP for arrow reference
+        [I'
+            [\textcolor{gray}{peva}-$\emptyset$\textsubscript{[3sg]}
+                ,name=headIP] % Naming head,IP for arrow reference
+            [vP
+                [DP [\textit{tih pet devojaka}]]
+                [v' [\textit{peva} ]]
+            ]
+        ]
+    ]
+    % Draw arrow from Spec,IP to head,IP
+    \draw[<-, thick, dashed] (specIP) to[bend right=40] (headIP);
+\end{forest}
+\z
+
+
+\noindent Before moving on to indefinite/unspecific subject-NumPs, I would like to briefly discuss another potential reason why a DP may remain low in the structure -- at least in a subset of cases. This may arise from the deficiency of the DP or from its distinct semantic type. It is possible, for instance, that some instances of non-agreeing DPs are, in fact, definite/specific degrees rather than individuals, in the sense of \citet{Matushansky2014, Matushansky2015a, Matushansky2015}, which cannot be conceived of as being plural \citep[193]{Matushansky2014}. In such cases, D may pick up a definite entity, but its number feature may remain unvalued for plural, as the associated NumP is neither grammatically nor semantically plural. See also \citet{Danon2011syntax} and \citet{Landau2016} for the claim that only person is valued \textit{directly} on D, while number and gender are inherited via DP-internal agreement.
+
+By not denoting individuals, such a DP is “deficient” compared to individuated DPs and, as a consequence, cannot raise to SpecIP. Instead, the subject position is filled by a default singular (situation) \textit{pro}. The reason is that the sentence can be anchored only by referential entities, either individuals or situations. In that sense, NumPs denoting degrees are not referential. However, even if one assumes that such a definite-degree NumP does reach the subject position, the resulting agreement pattern would still be singular (SgAgr).
+
+The definite-degree hypothesis is further supported by the fact that larger numbers tend to promote SgAgr \citep{Franks1995}; see \citet{Milosavljevic2017} for an overview. This trend supports the idea that such phrases are more easily conceptualized as degrees rather than individuals. For instance, \textit{10,000 ships} is more likely to be interpreted as a degree measure than \textit{five ships}, and is therefore more prone to trigger SgAgr -- even if the DP is definite.
+%the observation that SgAgr is compatible only with collective interpretations, at least for the speakers for whom SgAgr is possible only with collective at least for some speakers, as reported by \citet{Culinovic2017}. 
+%Moreover, as noted in the literature, 
+
+In sum, definite NumPs trigger plural agreement (PlAgr) only if they raise to SpecIP. When they remain in a lower structural position, singular agreement (SgAgr) arises due to agreement with a situational pronoun, which defaults to third-person singular. From the opposite perspective, the presence of third-person singular agreement signals that the sentence is anchored via a situation rather than a referential nominative subject. This analysis aligns closely with the independently established correlation between case and agreement \citep{Boskovic2008}: only subjects in SpecIP receive nominative case and are able to trigger PlAgr.\footnote{As indicated in fn. \ref{fn:Culinovic}, \citet{Culinovic2017} argues that PlAgr is associated with a distributive interpretation, whereas SgAgr corresponds to a collective one. This pattern would lend additional support to the present analysis, since distributivity can be linked to the temporal anchoring contributed by the higher subject position in SpecIP. However, as discussed in greater detail in subsection~\ref{subsect:future}, the correlation between distributive vs.\ collective interpretation and agreement is not entirely clear-cut and warrants further investigation.}
+
+
+Let us now turn to indefinite/non-specific NumPs, as in (\ref{ex-non-def-sg}). Here, I propose, the internal structure of NumP lacks the D layer responsible for interpretable $\phi$-features in the sense of \citet{Pereltsvaig2006}, see (\ref{structure:qp-singular}). With \citet{Matushansky2014, Matushansky2015}, we could assume that they denote degrees, rather than individuals, behaving like measure phrases.
+
+
+ \ea \label{ex-non-def-sg}
+ \gll Pet devojaka peva. \\
+five girls.\textsc{gen} \textsc{sing.3sg} \\
+\glt `Five girls are singing.'
+\z
+
+\ea \label{structure:qp-singular}
+$[$\textsubscript{KP} Num:\textit{pet} [\textsubscript{K'} K NP\textsubscript{GEN}:\textit{devojaka}]$]$
+\z 
+
+\noindent Since such NumPs do not denote individuals, they cannot move to SpecIP to anchor the sentence in context, so a (situation) \textit{pro} must fill the subject position\footnote{Recall from above that, according to \citet{Hinterholzl2019, Hinterholzl2024subjects}, only referential subjects, denoting individuals, and situations, can serve the anchoring role, which here syntactically corresponds to SpecIP.}, giving rise to SgAgr, as in (\ref{tree:non-def-sg}).\footnote{For a \textit{pro}-subject in licensing "default" agreement, see also \citet{Franks1994, Franks1995, Murphy2018}, a.o.}
+
+ \ea \label{tree:non-def-sg}
+    \begin{forest}
+    for tree={
+        s sep=1em, % adjust node separation if needed
+        anchor=center,
+        l+=1em
+    }
+    [IP
+        [pro\textsubscript{[3sg]}
+            ,name=specIP] % Naming Spec,IP for arrow reference
+        [I'
+            [\textcolor{gray}{peva}-$\emptyset$\textsubscript{[3sg]}
+                ,name=headIP] % Naming head,IP for arrow reference
+            [vP
+                [NumP [\textit{pet devojaka}]]
+                [v' [\textit{peva} ]]
+            ]
+        ]
+    ]
+    % Draw arrow from Spec,IP to head,IP
+    \draw[<-, thick, dashed] (specIP) to[bend right=40] (headIP);
+\end{forest}
+\z
+
+
+\noindent This is not the full story, however. As observed in section~\ref{sect:definiteness-effects-in-serbian}, items annotated as \textsc{-Def/Spec} can also give rise to PlAgr, accounting for 18\% of the examples in the corpus \citep{Milosavljevic2017}. One plausible explanation is that these cases may still involve specific subjects, although this cannot be independently confirmed from corpus data -- except through the observed PlAgr itself. Recall that subjects labeled as \textsc{-Def/Spec} are those lacking any overt or identifiable marking of definiteness or specificity.
+
+Focusing on examples with clearly non-referential subjects, such as (\ref{ex:unspecific-1}) above, we observe that out of 22 such cases, two exhibit PlAgr, amounting to 9\%. This small subset can be plausibly explained in terms of attraction effects—that is, the tendency to agree with the linearly closest element, which in this configuration is the noun itself (cf. \citealt{Bock1991, Wagers2009}); see also \citet{WillerGold2018-linearity} for further discussion of linearity effects in agreement.
+Notably, in both instances involving clearly non-referential numeral phrases -- illustrated in (\ref{ex-egg-mass}--\ref{ex-italian-plants}) -- the noun in genitive plural is syncretic with the nominative plural (e.g., \textit{jaja} `eggs’ and \textit{postrojenja} `factories’), which likely facilitates the attraction effect. For related discussion of how syncretism affects agreement with quantified phrases in Serbo-Croatian, see \citet{Mirkovic2013}.
+
+\ea \label{ex-egg-mass}
+\gll Po masi pet jaja prepelice odgovaraju jednom kokošijem jajetu. \\
+by weight five eggs.\textsc{gen} quail.\textsc{gen} correspond.\textsc{pl} one.\textsc{dat} chicken.\textsc{adj} egg.\textsc{dat} \\
+\glt `By weight, five quail eggs correspond to one chicken egg.'
+\z
+
+\ea \label{ex-italian-plants}
+\gll Šest italijanskih postrojenja proizvode isto koliko i jedna fabrika u Brazilu. \\
+six Italian.\textsc{gen} favtories.\textsc{gen} produce.\textsc{pl} same much as one factory in Brazil \\
+\glt `Six Italian factories produce as much as one factory in Brazil.'
+\z
+
+
+%Another possibility is that these are indefinite D-NumPs -- thus referential (and crucially, not bare NumPs) -- which can also license PlAgr. However, there appears to be a hierarchy in which Def/Spec D-NumPs are more likely to function as referential subjects and control agreement than their indefinite counterparts.
+
+%Finally, a small subset of these examples may arise due to attraction effects. I leave the investigation of such cases to future research.
+
+
+\section{Residual issues and open questions} \label{sect:residual-issues}
+
+The present section first discusses the differences in agreement between finite verbs and participles (subsection \ref{subsect:finite-vs-participles}), and then outlines some additional remaining open questions as directions for future research (subsection \ref{subsect:future}).
+
+\subsection{Finite verbs vs. participles} \label{subsect:finite-vs-participles}
+
+In this paper, I focused exclusively on finite forms (mainly the present tense). In complex forms including a participle, definiteness/specificity still plays a significant role, but with a weaker effect compared to the situation with finite verbs. The contrast as in Table \ref{tab:participles} emerges from the corpus study reported in \citet{Milosavljevic2017}. As can be observed, PlAgr with definite subjects is much more frequent than with indefinite ones (34\% vs. 6\%). Still, the portion of PlAgr with definite NumPs in the perfect is significantly lower than PlAgr with definite NumPs in the present tense (34\% vs. 66\%).\footnote{See also \citet{milosavljevic-stojkovic-2025genderedness} for a recent corpus-study that reinforces these findings.} 
+
+\begin{table}[h]  % Use [h] for "here", or adjust as needed
+    \centering
+    \caption{PlAgr with NumPs in present vs. perfect}
+    \label{tab:participles}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textsc{Semantic class of NumP-subjects} & \textsc{Present} & \textsc{Perfect} \\ [0.5ex]
+        \hline\hline
+        Definiteness (with a modifier left of the numeral) & 66\% (N=91) & 34\% (N=86) \\ 
+        \hline
+        Definiteness (without a modifier left of the numeral) & 60\% (N=30) & 37\% (N=27) \\ 
+        \hline
+        Specificity & 62\% (N=13) & 20\% (N=35) \\ 
+        \hline
+        ``Non-definiteness/specificity" & 18\% (N=96) & 6\% (N=252) \\ 
+        \hline
+    \end{tabular}
+\end{table}
+
+\noindent Typologically, participles tend to agree with the controller semantically more often than finite verbs \citep[233]{Corbett2006}. The fact that finite verbs exhibit PlAgr to a greater extent than participles in Serbian would be a counterexample to this generalization -- but only if PlAgr is considered ``semantic agreement". But, PlAgr is syntactic agreement, with the $\phi$-features on D.
+
+I will not attempt an analysis that accounts for the observed difference between finite verbs and participles here, but let me spell out some speculations to investigate in future work. The first obvious factor concerns the status of gender: this feature is only relevant for the agreement of participles and not finite verbs. It might be inhibitory for PlAgr as a $\phi$-feature with the most opaque semantics, compared to person and number \citep{Milosavljevic2017, Milosavljevic2018MS}\footnote{For instance, \citet{Arsenijevic2021} argues that gender is not a syntactic nor semantic feature, but rather derives from declension class and pragmatic markedness.}, or not a $\phi$-feature on D at all, but rather just a grammatical feature on the noun or some lower (classifier) projection. That gender-bearing forms such as participles possibly have a different controller has been argued in \citet{Milosavljevic2020}, who considers cases where finite verbs (auxiliaries) agree in plural with NumP subjects, but participles do not match the gender feature of the noun.\footnote{See also \citet{Arsenijevic2016} for number-gender independence in Serbo-Croatian, but with coordinated subjects.} Two types of such examples are provided in (\ref{ex:gender-neuter-to-masculine}) and (\ref{ex:gender-masculine-to-neuter}). In both, the auxiliary is third-person plural. The participle is also plural, but its gender does not match the gender of the noun. In the former, the noun is neuter, and the participle takes the masculine gender. In the latter example, the situation is reversed: the noun is masculine, but the participle has a form characteristic of the neuter plural. 
+
+\ea \label{ex:gender-neuter-to-masculine}
+\gll Ovih pet ostvarenja ispunili su uslove. \\
+these five achievements.\textsc{n.gen} fulfill.\textsc{ptcp.m.pl} \textsc{aux.3pl} condition.\textsc{acc.pl} \\
+\glt ‘These five achievements have met the conditions.’  
+\z
+
+\ea  \label{ex:gender-masculine-to-neuter}
+\gll Pet radnika su primila platu. \\  
+five workers.\textsc{m.gen} \textsc{aux.3pl} receive.\textsc{ptcp.n.pl} salary.\textsc{acc.sg} \\  
+\glt ‘Five workers have received their salary.’  
+\z  
+
+\noindent The idea that person and number are different controllers than gender would be close in spirit to the distinction suggested in \citet{Wechsler2011}, where finite verbs exhibit index (``pronominal") agreement whereas participles display concord (``classifier") agreement. The crucial role for finite verbs is performed by the person feature, which is, in essence, pronominal. \citet{Milosavljevic2017, Milosavljevic2018MS, Milosavljevic2018nasledje} attributes to the person feature the fact that definite NumPs favor PlAgr with NumPs in finite forms.\footnote{Or at least, person feature must be part of a bundle responsible for individuation of the referents, in the sense of \citet{Matushansky2014, Matushansky2015a, Matushansky2015}.} If the person feature is the key, the question arises as to why the movement to SpecIP is necessary. A part of the answer could be that the person feature on DP must check the finiteness feature of I/T (if one relates IP/TP to finiteness) or Fin (if one assumes FinP immediately above IP) to be able to anchor the sentence in the discourse, along the lines of \citet{Hinterholzl2019}; see also \citet{Bianchi2003}.
+
+From the perspective of whether the sentence is anchored via a referential DP or a situation pronoun, it may also be the case that in the perfect, there is a higher probability for a sentence to be anchored in context via situation, especially in the present perfect interpretation of the perfect form in Serbian. This at least emerges as a plausible hypothesis to be tested: whether present-tense situations are more about individuals than situations, whereas for ``perfect" situations, the opposite is true.  
+
+
+\subsection{Some directions for future research} \label{subsect:future}
+Before concluding the paper, let me outline some further directions for future research.
+The effect on agreement patterns of the collective vs. distributive interpretation of NumPs remains unexplained, given the conflicting results reported in the previous literature. For instance, as pointed above, \citet{Culinovic2017} argues that in Serbo-Croatian, the distributive interpretation is only possible with PlAgr (alongside SgAgr), while with SgAgr, only the collective interpretation of the quantified subject is possible. To my intuition, both SgAr and PlAgr are possible with both collective and distributive NumPs, which is in line with the finding by \citet{Bosnic2016} that the results based on experimental data in Serbian are inconclusive regarding the correlation of collectivity/distributivity and the type of agreement.\footnote{A reviewer points out examples with the distributive preposition/particle \textit{po}, such as (\ref{ex-non-def-sg}), attested on Google, which show that the distributive interpretation is fully compatible with SgAgr.
+
+\ea \label{ex-non-def-sg}
+\gll Čak pet igrača je zaradilo po žuti karton u drugom poluvremenu. \\
+even five players.\textsc{gen} \textsc{aux.sg} earn.\textsc{ptcp.n.sg} \textsc{dist} yellow card in second half \\
+\glt `Surprisingly, five players each got a yellow card in the second half.'
+\z
+
+\noindent Similar examples are also attested without the preposition/particle \textit{po}, which once again calls for further investigation of the role of distributivity/collectivity as a factor.} \citet{Ouwayda2014, Ouwayda2017} argues for the opposite direction in Lebanese Arabic: SgAgr must correlate with the distributive interpretation, while PlAgr is compatible with both.
+
+Another important task for future research involves accounting for cross-Slavic variation. While in Russian definiteness/specificity obligatorily triggers PlAgr with numerals `five and up', and in Serbian it significantly favors it, in some other Slavic languages it appears to have no effect altogether. For example, in Slovenian (cf. \citealt{Marusic2009,Marusic2015}) and Polish (cf. \citealt{Witkos2016, Witkos2016a, Matushansky2018}), SgAgr is consistently observed regardless of definiteness or specificity.
+The obligatory SgAgr in such cases has been attributed to various structural factors: the absence of nominative case on NumP \citep{Witkos2016, Witkos2016a}, the absence of the individuation feature \citep{Matushansky2018}, or the lack of $\phi$-features on D altogether \citep{Marusic2015}.
+
+
+
+\section{Conclusion}\label{sect:conclusion}
+
+This paper has examined finite-verb agreement patterns with numeral phrases, i.e. ``five-and-up'' subjects in Serbian. Two agreement options are attested in such contexts: singular agreement (SgAgr), typically labeled ``grammatical,'' involving default third-person singular morphology; and plural or ``semantic'' agreement (PlAgr), where the verb bears third-person plural morphology. While previous formal accounts have treated PlAgr as marginal or extra-grammatical, or failed to account for the variation conditioned by the semantic features of numeral phrases, the findings presented here challenge that view.
+
+Building on corpus data from \citet{Milosavljevic2017}, which demonstrates that PlAgr is in fact predominant with definite/specific numeral phrases, I have argued that PlAgr reflects a genuine syntactic process. Specifically, PlAgr arises when numeral phrases are full DPs and undergo movement to the canonical subject position (SpecIP). In contrast, SgAgr emerges when such movement does not occur -- either because the subject is a bare NumP or a DP that remains in a lower position. In these cases, agreement is controlled by a null situational \textit{pro}, which anchors the predicate to the utterance context. This proposal thus explains why definiteness/specificity strongly correlates with plural agreement: only referential subjects -- i.e., full DPs -- can reach SpecIP, where they are assigned nominative case and trigger PlAgr. 
+
+The proposal builds on two prominent alternative accounts of agreement patterns in Russian and Serbian. On one account, the difference between PlAgr and SgAgr is explained solely in terms of \textsc{internal structure}: numeral phrases projecting DP, and thus denoting individuals, obligatorily trigger PlAgr, while ``Small Nominals,'' i.e., structures without the D-layer, do not \citep{Pereltsvaig2006}. On the \textsc{external-structure} account, only numeral phrases that move from the verbal domain to the inflectional domain can trigger PlAgr \citep{Boskovic2008}. I argued that both internal and external differences are required to account for the Serbian data. While internal-structure differences can capture the Russian facts -- where all definite/specific NumPs give rise to PlAgr -- this alone is insufficient for Serbian, where definite/specific NumPs can still yield SgAgr. The positional alternative is likewise inadequate, as it cannot, by itself, explain the statistical tendency for definite/specific NumPs to produce PlAgr.
+
+
+
+
+
+\section*{Abbreviations}
+
+
+\begin{tabularx}{.5\textwidth}{@{}lQ}
+\textsc{3} & third person\\
+\ACC       & accusative\\
+\AOR       & aorist\\
+\AUX       & auxiliary\\
+\COMP      & complementizer\\
+\DAT       & dative\\
+\DIST & distributive\\
+\FEM       & feminine\\
+\GEN       & genitive\\
+\ILL       & illative\\
+\IMPFT     & imperfect\\
+
+\end{tabularx}%
+\begin{tabularx}{.5\textwidth}{lQ@{}}
+\INF       & infinitive\\
+\MASC      & masculine\\
+\NEUT      & neuter\\
+\NOM       & nominative\\
+\PAR       & partitive\\
+\PL        & plural\\
+\PRS       & present tense\\
+\PTCP      & participle\\
+\REFL      & reflexive\\
+\SG        & singular\\
+&\\ % this dummy row achieves correct vertical alignment of both tables
+\end{tabularx}
+
+
+
+\section*{Acknowledgements}
+I would like to thank the three anonymous reviewers for their helpful suggestions and the editors for their careful handling of the paper.
+
+%\section*{Contributions}
+%John Doe contributed to conceptualization, methodology, and validation. 
+%Jane Doe contributed to writing of the original draft, review, and editing.
+
+\sloppy
+\printbibliography[heading=subbibliography,notkeyword=this]
+\end{document}
